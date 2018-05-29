@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_20_151607) do
+ActiveRecord::Schema.define(version: 2018_05_28_043726) do
+
+  create_table "advertisements", force: :cascade do |t|
+    t.string "title"
+    t.string "copy"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
