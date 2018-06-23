@@ -24,7 +24,7 @@ posts = Post.all
 end
 
    Comment.find_or_create_by!(
-       post: Post.find(101),
+       post: Post.find(id),
        body: "music makes the world go round"
 )
 
