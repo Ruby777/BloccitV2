@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class User < ApplicationRecord
    before_save { self.email = email.downcase if email.present? }
 
@@ -10,5 +12,6 @@ class User < ApplicationRecord
              presence: true,
              uniqueness: { case_sensitive: false },
              length: { minimum: 3, maximum: 254 }
+
    has_secure_password
 end
