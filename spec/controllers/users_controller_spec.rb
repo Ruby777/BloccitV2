@@ -31,7 +31,7 @@ RSpec.describe UsersController, type: :controller do
 
         it "creates a new user" do
             expect{
-                post :create, params: { user: new_user_attributes }
+            post :create, params: { user: new_user_attributes }
             }.to change(User, :count).by(1)
         end
 
