@@ -21,7 +21,7 @@
           <% if current_user %>
             <%= image_tag avatar_url(current_user), class: :gravatar %>
             <div class="pull-right">
-              <li class="pull-right"><%= link_to "#{current_user.name} | Sign Out", session_path(current_user), method: :delete %>http://gravatar.com/avatar/#{gravatar_id}.png?s=48</li>
+               <%= link_to "#{current_user.name}" %> <br> <%= link_to  "Sign Out", session_path(current_user), method: :delete %>
             </div>
           <% else %>
             <li class="pull-right"><%= link_to "Sign in", new_session_path %></li>
@@ -42,9 +42,8 @@
          </div>
       <% end %>
        
-
       <%= yield %>
-
+      
     </div>
   </body>
 </html>
