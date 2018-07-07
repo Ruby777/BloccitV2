@@ -23,9 +23,14 @@ posts = Post.all
     )
 end
 
-   Comment.find_or_create_by!(
-       post: Post.find(id),
-       body: "music makes the world go round"
+post_with_comment = Post.create!(
+    title: "This post has a comment!",
+    body: "Something interesting to discuss."
+)
+
+Comment.find_or_create_by!(
+    post: post_with_comment,
+    body: "music makes the world go round"
 )
 
 puts "Seed finished"
