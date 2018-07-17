@@ -78,3 +78,6 @@ gem 'bootstrap-sass'
 
 #Used for encrypting passwords
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+
+#For handling sensitie data with environment variables such as API keys and SENDGRID Passwords
+gem 'figaro', '1.0'
