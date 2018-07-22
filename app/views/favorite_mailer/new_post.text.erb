@@ -1,0 +1,2 @@
+<h1>You are now following "<%= @post.title %>", you will be notified of all comments. If you don't wish to receive further notifications, unfavorite your <%= link_to "post", topic_post_url(@post.topic, @post)%>.</h1>
+<%= link_to "post", topic_post_url(@post.topic, @post) %>
