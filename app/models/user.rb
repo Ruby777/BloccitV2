@@ -18,5 +18,5 @@ class User < ApplicationRecord
 
    has_secure_password
 
-   enum role: [:member, :admin, :moderator]
+   enum role: [:member, :moderator, :admin]
 end

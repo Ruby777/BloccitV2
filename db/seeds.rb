@@ -40,6 +40,7 @@ posts = Post.all
     )
 end
 
+# Create an admin user
  admin = User.create!(
      name:     'Admin User',
      email:    'admin@example.com',
@@ -47,12 +48,20 @@ end
      role:      'admin'
  )
 
+ # Create a member
  member = User.create!(
      name:     'Member User',
      email:    'member@example.com',
      password: 'helloworld'
  )
 
+ # Create a moderator
+ moderator = User.create!(
+     name:      'Moderator User',
+     email:     'moderator@example.com',
+     password:  'helloworld',
+     role:      'moderator'
+ )
 
 
 puts "Seed finished"
