@@ -100,6 +100,7 @@ RSpec.describe User, type: :model do
     end
   end
 
+  
   describe ".avatar_url" do
     let(:known_user) { create(:user, email: "blochead@bloc.io")}
 
