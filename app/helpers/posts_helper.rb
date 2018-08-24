@@ -4,6 +4,6 @@ module PostsHelper
     end
 
     def user_is_authorised_for_post_edit?(post)
-       current_user && (current_user == post.user || current_user.admin?) || current_user.moderator?
+       current_user && (current_user == post.user || current_user.admin? || current_user.moderator?)
     end
 end

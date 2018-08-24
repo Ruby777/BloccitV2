@@ -8,6 +8,7 @@ RSpec.describe PostsController, type: :controller do
   let (:my_topic) { Topic.create!(name:  RandomData.random_sentence, description: RandomData.random_paragraph) }
   let(:my_post) { my_topic.posts.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph, user: my_user) }
 
+
   context "guest" do
     describe "GET show" do
       it "returns http success" do
@@ -356,6 +357,13 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to redirect_to [my_topic, my_post]
       end
     end
+
+    describe "DELETE destroy" do
+      it "returns http redirect" do
+        delete :destroy, params: { topic_id: my_topic.id, id: my_post.id }
+        expect(response).to redirect_to([my_topic, my_post])
+      end
+    end
   end
 
   context "moderator user doing CRUD on a post they own" do
@@ -454,6 +462,13 @@ RSpec.describe PostsController, type: :controller do
 
         put :update, params: { topic_id: my_topic.id, id: my_post.id, post: { title: new_title, body: new_body } }
         expect(response).to redirect_to [my_topic, my_post]
+      end
+    end
+
+    describe "DELETE destroy" do
+      it "returns http redirect" do
+        delete :destroy, params: { topic_id: my_topic.id, id: my_post.id }
+        expect(response).to redirect_to([my_topic, my_post])
       end
     end
   end
