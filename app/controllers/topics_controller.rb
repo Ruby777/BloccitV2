@@ -2,7 +2,9 @@ class TopicsController < ApplicationController
 
     before_action :require_sign_in, except: [:index, :show]
     
-    before_action :authorize_user, except: [:index, :show]
+    before_action :authorize_user, except: [:index, :show, :destroy]
+
+    before_action :authorize_delete: [:index, :show]
 
     def index
         @topics = Topic.all
@@ -48,6 +50,14 @@ class TopicsController < ApplicationController
       @topic = Topic.find(params[:id])
  
       if @topic.destroy
+        
+        def authorize_delete
+            unless current_user.admin?
+                flash[:alert] = "You are not allowed to do that"
+                redirect_to topics_path
+            end
+        end
+
         flash[:notice] = "\"#{@topic.name}\" was deleted successfully."
         redirect_to action: :index
       else
@@ -61,7 +71,7 @@ class TopicsController < ApplicationController
     def topic_params
         params.require(:topic).permit(:name, :description, :public)
     end
-
+    
 
     def authorize_user
         unless current_user.admin? || current_user.moderator?
