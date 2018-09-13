@@ -21,15 +21,21 @@
    </div>
  </div>
  
- 
+<h2>Posts</h2>
+<% if user_has_posts?(@user) %> 
+    <%= render @user.posts %>
+<% else %>
+     <%= @user.name %> has not submitted any posts.
+<% end %>
 
- <h2>Posts</h2>
-     <%= render @user.posts %>
-     
- <h2>Comments</h2>
-     <%= render @user.comments %>
+<h2>Comments</h2>
+<% if user_has_comments?(@user) %>
+    <%= render @user.comments %>
+<% else %>
+    <%= @user.name %> has not submitted any comments.
+<% end %>
 
  <h2>Favorites</h2>
-     <%= render @user.favorites %>    
+     <%= render 'users/favorited', posts: @user.favorites %>    
    
  

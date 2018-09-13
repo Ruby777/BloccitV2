@@ -1,0 +1,10 @@
+<% posts.each do |post| %>
+    <h2><%= post.post.title %></h2>
+    <div class="media-left">
+        <%= image_tag post.post.user.avatar_url(48), class: 'media-object' %>
+    </div>
+    <div class="media-right">
+        Post by: <%= post.post.user.name %>
+        <%= post.post.votes.count %> Votes
+        <%= post.post.comments.count %> Comments
+<% end %>
