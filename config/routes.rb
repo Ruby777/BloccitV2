@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :posts, except: [:index]
   end
 
+  resources :advertisements
+
   resources :users,only: [:new, :create]
 
   resources :sessions, only: [:new, :create, :destroy]
