@@ -1,11 +1,11 @@
-# Bloccit
+# DiscoverIt
 
 ## Description:
-* A Reddit replica to teach the fundamentals of web development and Rails.
+* A Ruby on Rails application for creating user posts. Similar to Reddit.
 
 
 ## User Guideline:
-* Go to [Bloccit](https://warm-wildwood-27346.herokuapp.com/)
+* Go to [DiscoverIt](https://warm-wildwood-27346.herokuapp.com/)
 * Sign in or Sign up for an account
 * Create topics and posts 
 * Add comments to posts
@@ -42,6 +42,3 @@
 * Start Puma (rails server) using `rails s`
 * Run the application through localhost:3000
 
-
-
-Created by Lucy Njuguna with :heart: at [Bloc.io](http://bloc.io).
