@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   before_action :require_sign_in, except: :show
   
-  before_action :authorize_user, except: [:show, :new, :create, :edit, :update, :delete]
+  before_action :authorize_user, except: [:show, :new, :create, :edit, :update]
 
   before_action :authorize_owner_or_admin_or_moderator, only: [:edit, :update]
 
